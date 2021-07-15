@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import SaveBtn from "../components/SaveBtn";
-import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
-import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, FormBtn } from "../components/Form";
@@ -33,8 +31,8 @@ function SearchContainer() {
     const bookToSave = searchedBooks.find(book => book.volumeInfo.title === bookTitle);
     const bookData = {
       title: bookToSave.volumeInfo.title,
-      authors: bookToSave.volumeInfo.authors,
-      description: bookToSave.volumeInfo.description,
+      authors: bookToSave.volumeInfo.authors ? bookToSave.volumeInfo.authors : [],
+      description: bookToSave.volumeInfo.description ? bookToSave.volumeInfo.description : '',
       image: bookToSave.volumeInfo.imageLinks.thumbnail,
       link: bookToSave.volumeInfo.infoLink,
     }
@@ -81,7 +79,7 @@ function SearchContainer() {
                     </strong>
                   </a>
                   <span>
-                    &nbsp;by 
+                    &nbsp;by&nbsp;
                     {book.volumeInfo.authors
                       ? book.volumeInfo.authors.map((author, idx, arr) => (
                           arr.length - 1 === idx
@@ -99,7 +97,7 @@ function SearchContainer() {
               ))}
             </List>
           ) : (
-            <h3>Searching a book title will display results here!</h3>
+            <h3 style={{textAlign: "center"}}>Searching a book title will display results here!</h3>
           )}
         </Col>
       </Row>

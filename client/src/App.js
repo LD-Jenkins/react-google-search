@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Detail from "./pages/Detail";
-import SavedBooks from "./pages/SavedBooks";
+import SavedBooksContainer from "./pages/SavedBooksContainer";
 import Nav from "./components/Nav";
 import SearchContainer from "./pages/SearchContainer";
 
@@ -14,11 +13,8 @@ function App() {
           <Route exact path={["/", "/books"]}>
             <SearchContainer />
           </Route>
-          <Route exact path="/books/:id">
-            <Detail />
-          </Route>
           <Route>
-            <SavedBooks />
+            <SavedBooksContainer />
           </Route>
         </Switch>
       </div>
