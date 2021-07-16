@@ -16,9 +16,9 @@ function SearchContainer() {
 
   const searchBooks = (event) => {
     event.preventDefault();
-    API.findBooks(searchTitle)
+    API.searchBooks(searchTitle)
       .then(res => {
-        // console.log(res.data.items);
+        console.log(res.data.items);
         setSearchedBooks(res.data.items);
       })
       .catch(err => console.log(err));
@@ -44,7 +44,7 @@ function SearchContainer() {
       const bookIdx = tempBooks.findIndex(book => book.volumeInfo.title === bookData.title);
       tempBooks[bookIdx].wasClicked = true;
       setSearchedBooks(tempBooks);
-      console.log(searchedBooks);
+      // console.log(searchedBooks);
     }
   };
 

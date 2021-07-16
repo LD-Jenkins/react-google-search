@@ -10,7 +10,7 @@ export default {
   saveBook: function(bookData) {
     return axios.post("/api/books", bookData);
   },
-  findBooks: function(title) {
-    return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${title}&key=AIzaSyB0jSxGXW7e4wxa1beUHu8v4_N4OIWh1ic`);
+  searchBooks: async function(title) {
+    return await axios.get(`/proxy/${title}`);
   }
 };

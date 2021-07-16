@@ -80,7 +80,8 @@ function SavedBooksContainer() {
                 className="col">
                 <img
                   src={book.image}
-                  style={{ maxWidth: "200px", maxHeight: "325px" }}>
+                  style={{ maxWidth: "200px", maxHeight: "325px" }}
+                  alt={`Volume cover for ${book.title}`}>
                 </img>
               </div>
               
