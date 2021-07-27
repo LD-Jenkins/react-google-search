@@ -5,13 +5,13 @@ import API from "../utils/API";
 function SavedBooksContainer() {
 
   const [savedBooks, setSavedBooks] = useState([]);
-  useEffect(() => {
-    API.getBooks()
-      .then(res => {
-        setSavedBooks(res.data);
-      })
-      .catch(err => console.log(err));
-  }, []);
+  // useEffect(() => {
+  //   API.getBooks()
+  //     .then(res => {
+  //       setSavedBooks(res.data);
+  //     })
+  //     .catch(err => console.log(err));
+  // }, []);
 
   const deleteBtnClicked = (id) => {
     API.deleteBook(id)
