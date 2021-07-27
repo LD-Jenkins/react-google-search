@@ -4,7 +4,7 @@ import API from "../utils/API";
 
 function SavedBooksContainer() {
 
-  const [savedBooks, setSavedBooks] = useState([]);
+  // const [savedBooks, setSavedBooks] = useState([]);
   // useEffect(() => {
   //   API.getBooks()
   //     .then(res => {
@@ -13,18 +13,18 @@ function SavedBooksContainer() {
   //     .catch(err => console.log(err));
   // }, []);
 
-  const deleteBtnClicked = (id) => {
-    API.deleteBook(id)
-      .then(res => {
-        console.log(res);
-        API.getBooks()
-          .then(res => {
-            setSavedBooks(res.data);
-          })
-          .catch(err => console.log(err));
-      })
-      .catch(err => console.log(err));
-  }
+  // const deleteBtnClicked = (id) => {
+  //   API.deleteBook(id)
+  //     .then(res => {
+  //       console.log(res);
+  //       API.getBooks()
+  //         .then(res => {
+  //           setSavedBooks(res.data);
+  //         })
+  //         .catch(err => console.log(err));
+  //     })
+  //     .catch(err => console.log(err));
+  // }
 
 
   return (
